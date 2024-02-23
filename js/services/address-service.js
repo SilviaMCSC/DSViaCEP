@@ -10,5 +10,30 @@ const address = new Address (result.cep, result.logradouro, null, result.localid
 return address
 }
 
-//função respons[avel por receber um cep e retornar um objeto do tipo 
+
+export function getErrors (address){
+
+    const errors = {};
+
+    if (!address.cep || address.cep==""){ //se o campo não estiver definido ou vazio
+        errors.cep = "campo requerido";
+        }
+
+        if (!address.number || address.number==""){
+            errors.number = "campo requerido";
+            }
+
+
+
+
+    return errors;
+        }
+        
+
+
+
+
+//função responsável por receber um cep e retornar um objeto do tipo 
 //Address que contem todo o endereço
+
+//componente responsável por adicionar as rotas do address.
